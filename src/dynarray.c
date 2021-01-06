@@ -1,6 +1,5 @@
 #include <stddef.h>
 #include <stdlib.h>
-#include <stdio.h>
 
 #include "modules.h"
 
@@ -32,8 +31,6 @@ void push_back_module(DynamicModulesArray* array, Module* module) {
     }
 
     array->modules[array->used++] = *module;
-
-    printf("extend");
 }
 
 void destruct_dynamic_modules_array(DynamicModulesArray* array) {
