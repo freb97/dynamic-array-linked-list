@@ -13,7 +13,7 @@ typedef struct {
 Module module_read() {
     Module module;
 
-    int scan = scanf(" %64[^,],%5[^,],%u,%u,%u,%u",
+    scanf(" %64[^,],%5[^,],%u,%u,%u,%u",
         module.title,
         module.abbrev,
         &module.workload,

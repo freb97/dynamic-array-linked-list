@@ -12,8 +12,6 @@ typedef struct {
 
 Module module_read();
 
-void module_destroy(Module *module);
-
 void module_print(Module module);
 
 #endif /* MODULES_H */
