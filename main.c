@@ -18,6 +18,9 @@ int main() {
         push_back_module(&array, module);
     }
     
+    // Erase module "MAT1" (index 12)
+    erase_module(&array, 12);
+
     // Print all modules in array
     for (int i = 0; i < array.used; i++) {
         module_print(array.modules[i]);

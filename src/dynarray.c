@@ -44,6 +44,14 @@ unsigned int find_module_index(DynamicModulesArray* array, char* abbreviation) {
     return array->used;
 }
 
+void erase_module(DynamicModulesArray* array, unsigned int index) {
+    for (int i = index; i < array->used - 1; i++) {
+        array->modules[i] = array->modules[i + 1];
+    }
+
+    array->used--;
+}
+
 void destruct_dynamic_modules_array(DynamicModulesArray* array) {
     if (array->modules != NULL) {
         free(array->modules);
