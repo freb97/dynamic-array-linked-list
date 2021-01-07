@@ -10,17 +10,22 @@ typedef struct {
     unsigned int duration;
 } Module;
 
-Module module_read() {
-    Module module;
+Module* module_read() {
+    Module *module = (Module*) malloc(sizeof(Module));
 
-    scanf(" %64[^,],%5[^,],%u,%u,%u,%u",
-        module.title,
-        module.abbrev,
-        &module.workload,
-        &module.credits,
-        &module.semester,
-        &module.duration
+    int scan = scanf(" %64[^,],%5[^,],%u,%u,%u,%u",
+        module->title,
+        module->abbrev,
+        &module->workload,
+        &module->credits,
+        &module->semester,
+        &module->duration
     );
+
+    if (scan != 6) {
+        free(module);
+        return NULL;
+    }
 
     return module;
 }

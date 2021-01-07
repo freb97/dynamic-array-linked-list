@@ -6,14 +6,18 @@
 int main() {
     DynamicModulesArray array = construct_dynamic_modules_array();
 
-    for (int i = 0; i < 15; i++) {
-        Module module = module_read();
+    while(1) {
+        Module *module = module_read();
 
-        push_back_module(&array, &module);
+        if (module == NULL) {
+            break;
+        }
+
+        push_back_module(&array, module);
     }
     
-    for (int ii = 0; ii < 15; ii++) {
-        module_print(array.modules[ii]);
+    for (int i = 0; i < array.used; i++) {
+        module_print(array.modules[i]);
     }
 
     destruct_dynamic_modules_array(&array);

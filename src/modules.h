@@ -10,7 +10,7 @@ typedef struct {
     unsigned int duration;
 } Module;
 
-Module module_read();
+Module* module_read();
 
 void module_print(Module module);
 
