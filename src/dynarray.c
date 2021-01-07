@@ -14,7 +14,7 @@ DynamicModulesArray construct_dynamic_modules_array() {
     DynamicModulesArray array;
  
     array.size = 4;
-    array.used = 0;
+    array.used = -1;
 
     array.modules = (Module*) malloc(array.size * sizeof(Module));
  
@@ -27,7 +27,7 @@ void extend_dynamic_modules_array(DynamicModulesArray* array) {
 }
 
 void push_back_module(DynamicModulesArray* array, Module* module) {
-    if (array->used == array->size) {
+    if (array->used + 1 == array->size) {
         extend_dynamic_modules_array(array);
     }
 
@@ -35,7 +35,7 @@ void push_back_module(DynamicModulesArray* array, Module* module) {
 }
 
 unsigned int find_module_index(DynamicModulesArray* array, char* abbreviation) {
-    for (int i = 0; i < array->used; i++) {
+    for (int i = 0; i <= array->used; i++) {
         if (strcmp(abbreviation, array->modules[i].abbrev) == 0) {
             return i;
         }
@@ -45,7 +45,7 @@ unsigned int find_module_index(DynamicModulesArray* array, char* abbreviation) {
 }
 
 void erase_module(DynamicModulesArray* array, unsigned int index) {
-    for (int i = index; i < array->used - 1; i++) {
+    for (int i = index; i < array->used; i++) {
         array->modules[i] = array->modules[i + 1];
     }
 
@@ -53,11 +53,11 @@ void erase_module(DynamicModulesArray* array, unsigned int index) {
 }
 
 void insert_module(DynamicModulesArray* array, unsigned int index, Module* module) {
-    if (index + 1 > array->size) {
+    if (array->used + 1 > array->size) {
         extend_dynamic_modules_array(array);
     }
 
-    for (int i = array->used; i >= index; i--) {
+    for (int i = array->used + 1; i >= index; i--) {
         array->modules[i + 1] = array->modules[i];
     }
 

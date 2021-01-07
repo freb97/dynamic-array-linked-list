@@ -44,5 +44,5 @@ int main() {
     // Destruct array and free allocated memory
     destruct_dynamic_modules_array(&array);
 
-    return 0;
+    return 1;
 }
