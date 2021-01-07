@@ -52,6 +52,19 @@ void erase_module(DynamicModulesArray* array, unsigned int index) {
     array->used--;
 }
 
+void insert_module(DynamicModulesArray* array, unsigned int index, Module* module) {
+    if (index + 1 > array->size) {
+        extend_dynamic_modules_array(array);
+    }
+
+    for (int i = array->used; i >= index; i--) {
+        array->modules[i + 1] = array->modules[i];
+    }
+
+    array->modules[index] = *module;
+    array->used++;
+}
+
 void destruct_dynamic_modules_array(DynamicModulesArray* array) {
     if (array->modules != NULL) {
         free(array->modules);
