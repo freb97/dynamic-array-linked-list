@@ -16,6 +16,8 @@ void extend_dynamic_modules_array(DynamicModulesArray* array);
 
 void push_back_module(DynamicModulesArray* array, Module* module);
 
+unsigned int find_module_index(DynamicModulesArray* array, char* abbreviation);
+
 void destruct_dynamic_modules_array(DynamicModulesArray* array);
 
 #endif // DYNARRAY_H

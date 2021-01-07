@@ -1,5 +1,6 @@
 #include <stddef.h>
 #include <stdlib.h>
+#include <string.h>
 
 #include "modules.h"
 
@@ -31,6 +32,16 @@ void push_back_module(DynamicModulesArray* array, Module* module) {
     }
 
     array->modules[array->used++] = *module;
+}
+
+unsigned int find_module_index(DynamicModulesArray* array, char* abbreviation) {
+    for (int i = 0; i < array->used; i++) {
+        if (strcmp(abbreviation, array->modules[i].abbrev) == 0) {
+            return i;
+        }
+    }
+
+    return array->used;
 }
 
 void destruct_dynamic_modules_array(DynamicModulesArray* array) {
