@@ -15,7 +15,7 @@ int main() {
             break;
         }
 
-        // Push modules into array
+        // Push module into array
         push_back_module(&array, module);
     }
 
