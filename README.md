@@ -19,7 +19,7 @@ module structs passed to the array.
 
 `build/dynamicarray < input/modules.csv`
 
-### listed lists
+### linked list
 
 Run the executable, use the given modules.csv data to initialize the 
 module structs passed to the linked list.
