@@ -1,5 +1,5 @@
-#ifndef DYNARRAY_H
-#define DYNARRAY_H
+#ifndef DYNAMIC_ARRAY_H
+#define DYNAMIC_ARRAY_H
 
 #include <stddef.h>
 #include "modules.h"
@@ -24,4 +24,4 @@ void insert_module(DynamicModulesArray* array, unsigned int index, Module* modul
 
 void destruct_dynamic_modules_array(DynamicModulesArray* array);
 
-#endif // DYNARRAY_H
+#endif // DYNAMIC_ARRAY_H

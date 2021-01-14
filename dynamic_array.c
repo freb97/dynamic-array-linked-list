@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 #include "src/modules.h"
-#include "src/dynarray.h"
+#include "src/dynamic_array.h"
 
 int main() {
     // Construct array and allocate memory
