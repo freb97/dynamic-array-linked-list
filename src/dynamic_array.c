@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "modules.h"
 #include "dynamic_array.h"
+#include "modules.h"
 
 DynamicModulesArray construct_dynamic_modules_array() {
     // Construct dynamic modules array and allocate memory with for an initial capacity of 4

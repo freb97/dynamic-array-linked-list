@@ -40,7 +40,6 @@ int main() {
     insert_module_after(list, find_list_modules_element(list, "SLAB"), additional_module);
 
     // Print all modules
-    printf("\nPrinting all modules:\n");
     element = list->first;
     while(1) {
         if (element->next != NULL) {
