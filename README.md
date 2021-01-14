@@ -1,4 +1,4 @@
-# Dynamic Modules Array and Linked List
+# Dynamic Array and Linked List
 
 Dynamically growing array and linked list of a custom struct "Module"
 
